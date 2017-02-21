@@ -13,6 +13,33 @@ Existem algumas funcionalidades que ainda não foram implementadas que posterior
 - Node.js: v6.9.5
 - Mongo DB: 3.4
 
+### Executando o Atom Player
+Antes de iniciar as configurações iniciais e rodar uma instância do servidor de Atom Player, certifique-se de que possui os requisitos de software recomendados acima, e que o Mongo DB esteja em funcionamento e pronto para requisições.
+
+#### Instalando módulos
+- Execute o comando de instalação de módulos do NPM
+```
+sudo npm install
+```
+#### Configurando `config.js`
+Faça uma cópia do arquivo `config.example.js` e renomei para `config.js`. Dentro do arquivo você terá:
+```
+module.exports = {
+	connection: "mongodb://localhost/database",
+	secret: "random_key",
+	pass_secret: "random_key",
+	pass_algorithm: "aes-256-ctr"
+};
+```
+Nas áreas `random_key` você deve colocar (entre as aspas) duas senhas secretas diferentes. Estas senhas são importantes para criptografar as informações de sessões dos usuários, por isso é fundamental que só você tenha acesso à elas. Recomenda-se que você crie senhas aleatórias utilizando geradores de senhas como o SPG ((clique aqui)[http://passwordsgenerator.net/]).
+
+#### Iniciando a aplicação
+O passo final é dar o start na aplicação. Para isso, execute:
+```
+node index.js
+```
+Se tudo ocorreu bem, a página inicial do Atom Player deve estar rodando no endereço: `http://localhost:8080`.
+
 ### Contribuindo
 Este repositório está vinculado à um canal do Gitter.im para discussão. Antes de contribuir relate o problema/solução no canal: (https://gitter.im/Atom-Player)[https://gitter.im/Atom-Player].
 
