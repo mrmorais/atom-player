@@ -1,0 +1,153 @@
+<form>
+    <div id="search" class="form-group">
+        <input ng-model="query" ng-change="search(this)" id="search-input" type="text" class="form-control" placeholder='Buscar' autocomplete="off">
+    </div>
+</form>
+<div id="browse-content">
+	<div id="search-result" ng-show="search_show">
+		<h4>Resultados da busca</h4><a ng-click="searchClear()">limpar</a>
+		<div class="row">
+			<div class="podcast-card" ng-repeat="podcast in search.results">
+				<a href="podcast/{{podcast.srcId}}">
+					<img src="{{podcast.art600}}">
+					<div class="title">{{podcast.name}}</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div ng-hide="search_show">
+	<h4>Recomendados para você <small>(saiba mais)</small></h4>
+		<div class="row">
+			<div class="podcast-card">
+				<a href="podcast/634035467">
+					<img src="http://supernovo.net/wp-content/uploads/powerpress/patrulha-da-noite-1400.png">
+					<div class="title">A Patrulha da Noite</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/156966105">
+					<img src="http://a2.mzstatic.com/us/r30/Music6/v4/0d/aa/c7/0daac77f-ddfd-4c07-c174-248b1e126d33/cover170x170.jpeg">
+					<div class="title">Escriba Cafe</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/453067879">
+					<img src="http://i1.sndcdn.com/avatars-000098189084-f764fe-original.jpg">
+					<div class="title">AntiCast</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1059226328">
+					<img src="http://imglogo.podbean.com/image-logo/843168/aprendocast_apple_rgb_1500x1500_300dpi.jpg">
+					<div class="title">Aprendocast</div>
+				</a>
+			</div>
+		</div><!--.row-->
+	<h4>Mais acessados da semana</h4>
+		<div class="row">
+			<div class="podcast-card">
+				<a href="podcast/191182582">
+					<img src="http://is4.mzstatic.com/image/thumb/Music/v4/53/c4/c2/53c4c2b6-60f4-96b7-42d7-f8068b8b4323/source/600x600bb.jpg">
+					<div class="title">Nerdcast - Jovem Nerd</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1036444741">
+					<img src="http://is2.mzstatic.com/image/thumb/Music69/v4/2d/b3/f9/2db3f9fc-278a-eb85-7712-41aec04dbffd/source/600x600bb.jpg">
+					<div class="title">GVCAST</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1102070398">
+					<img src="http://is5.mzstatic.com/image/thumb/Music20/v4/36/10/43/36104399-3e98-03e1-d4cf-6a98216943c6/source/600x600bb.jpg">
+					<div class="title">Criscast</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1047192772">
+					<img src="http://is2.mzstatic.com/image/thumb/Music6/v4/0e/ee/b2/0eeeb26a-afd8-d5a9-8f75-6810157af2e5/source/600x600bb.jpg">
+					<div class="title">Não Ouvo</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1088694799">
+					<img src="http://a3.mzstatic.com/us/r30/Music69/v4/f6/9a/24/f69a24d6-f053-efe1-d354-4c827277cbe7/cover170x170.jpeg">
+					<div class="title">Código Aberto</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1046178636">
+					<img src="http://a4.mzstatic.com/us/r30/Music3/v4/d8/4c/3c/d84c3c85-9dd1-b416-c2da-50dc48803ed7/cover170x170.jpeg">
+					<div class="title">GunCast</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/504897783">
+					<img src="http://a4.mzstatic.com/us/r30/Music49/v4/db/ac/76/dbac7679-d76d-9283-7d29-9d1a40f923b1/cover170x170.jpeg">
+					<div class="title">Braincast</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1050640259">
+					<img src="http://a2.mzstatic.com/us/r30/Music6/v4/b8/6a/e6/b86ae6fe-4278-1e20-fc0a-6ad585ed42fc/cover170x170.jpeg">
+					<div class="title">Podcast da Bel</div>
+				</a>
+			</div>
+		</div><!--.row-->
+    <h4>Sobre Negócios</h4>
+    <div class="row">
+			<div class="podcast-card">
+				<a href="podcast/191182582">
+					<img src="http://is4.mzstatic.com/image/thumb/Music/v4/53/c4/c2/53c4c2b6-60f4-96b7-42d7-f8068b8b4323/source/600x600bb.jpg">
+					<div class="title">Nerdcast - Jovem Nerd</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1036444741">
+					<img src="http://is2.mzstatic.com/image/thumb/Music69/v4/2d/b3/f9/2db3f9fc-278a-eb85-7712-41aec04dbffd/source/600x600bb.jpg">
+					<div class="title">GVCAST</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1102070398">
+					<img src="http://is5.mzstatic.com/image/thumb/Music20/v4/36/10/43/36104399-3e98-03e1-d4cf-6a98216943c6/source/600x600bb.jpg">
+					<div class="title">Criscast</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1047192772">
+					<img src="http://is2.mzstatic.com/image/thumb/Music6/v4/0e/ee/b2/0eeeb26a-afd8-d5a9-8f75-6810157af2e5/source/600x600bb.jpg">
+					<div class="title">Não Ouvo</div>
+				</a>
+			</div>
+    </div><!--.row-->
+    <h4>Sobre Comédia</h4>
+    <div class="row">
+      <div class="podcast-card">
+				<a href="podcast/1088694799">
+					<img src="http://a3.mzstatic.com/us/r30/Music69/v4/f6/9a/24/f69a24d6-f053-efe1-d354-4c827277cbe7/cover170x170.jpeg">
+					<div class="title">Código Aberto</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1046178636">
+					<img src="http://a4.mzstatic.com/us/r30/Music3/v4/d8/4c/3c/d84c3c85-9dd1-b416-c2da-50dc48803ed7/cover170x170.jpeg">
+					<div class="title">GunCast</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/504897783">
+					<img src="http://a4.mzstatic.com/us/r30/Music49/v4/db/ac/76/dbac7679-d76d-9283-7d29-9d1a40f923b1/cover170x170.jpeg">
+					<div class="title">Braincast</div>
+				</a>
+			</div>
+			<div class="podcast-card">
+				<a href="podcast/1050640259">
+					<img src="http://a2.mzstatic.com/us/r30/Music6/v4/b8/6a/e6/b86ae6fe-4278-1e20-fc0a-6ad585ed42fc/cover170x170.jpeg">
+					<div class="title">Podcast da Bel</div>
+				</a>
+			</div>
+    </div><!--.row-->
+    <a href="preferences" class="btn btn-default form-control">Ainda não encontrou o que queria? Mude suas preferências</a>
+	</div>
+</div>

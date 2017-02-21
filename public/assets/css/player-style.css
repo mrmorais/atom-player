@@ -1,0 +1,143 @@
+#player {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.slider {
+	-webkit-appearance: none;
+	margin: 0 0;
+	width: 100%;
+}
+.slider:focus {
+	outline: none;
+}
+.slider::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 12.8px;
+	cursor: pointer;
+	animate: 0.2s;
+	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	background: #00b3fe;
+	border-radius: 0px;
+	border: 0px solid #000101;
+}
+.slider::-webkit-slider-thumb {
+	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	border: 0px solid #000000;
+	height: 12.8px;
+	width: 39px;
+	border-radius: 0px;
+	background: #B15F00;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: 0px;
+}
+.slider:focus::-webkit-slider-runnable-track {
+	background: #00b3fe;
+}
+
+.slider::-moz-range-track {
+	width: 100%;
+	height: 12.8px;
+	cursor: pointer;
+	animate: 0.2s;
+	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+	background: #00b3fe;
+	border-radius: 0px;
+	border: 0px solid #000101;
+}
+.slider::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 12.8px;
+  width: 39px;
+  border-radius: 0px;
+  background: #B15F00;
+  cursor: pointer;
+}
+.slider::-ms-track {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+}
+.slider::-ms-fill-lower {
+  background: #00b3fe;
+  border: 0px solid #000101;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+.slider::-ms-fill-upper {
+  background: #00b3fe;
+  border: 0px solid #000101;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+.slider::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 12.8px;
+  width: 39px;
+  border-radius: 0px;
+  background: #B15F00;
+  cursor: pointer;
+}
+.slider:focus::-ms-fill-lower {
+  background: #00b3fe;
+}
+.slider:focus::-ms-fill-upper {
+  background: #00b3fe;
+}
+
+#control {
+	background: #00597E;
+	margin: 1px;
+	margin-top: -2px;
+	margin-bottom: 30px;
+}
+#control #time {
+	font-size: 11px;
+	float: right;
+	margin-right: 4px;
+	color: #FFF;
+}
+#control #panel {
+	width: 100%;
+}
+.pl-btn {
+	color: #FFF;
+	font-size: 18px;
+	margin: 10px;
+	cursor: pointer;
+}
+#volume {
+	width: 120px;
+	margin-left: 140px;
+	margin-top: -28px;
+}
+#volume::-webkit-slider-runnable-track {
+	height: 5px;
+	border-radius: 20px;
+}
+#volume::-moz-range-track {
+	height: 5px;
+	border-radius: 20px;
+}
+#volume::-moz-range-thumb {
+	border-radius: 20px;
+	width: 20px;
+}
+
+#volume::-webkit-slider-thumb {
+	margin-top: -3px;
+	border-radius: 20px;
+	width: 20px;
+}
+
+.subitem-settings {
+	padding: 10px;
+}

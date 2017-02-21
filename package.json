@@ -1,0 +1,26 @@
+{
+  "name": "atom-player",
+  "version": "1.0.0",
+  "description": "Podcast player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maradona Morais",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "body-parser": "^1.15.1",
+    "cors": "^2.7.1",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^7.0.0",
+    "mongoose": "^4.4.19",
+    "node-podcast-parser": "^1.0.2",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1"
+  }
+}

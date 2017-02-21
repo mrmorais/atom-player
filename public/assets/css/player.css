@@ -1,0 +1,239 @@
+body {
+	background: #FFF;
+}
+#wrapper {
+	padding-left: 0;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 230px;
+	width: 0;
+	height: 100%;
+	margin-left: -230px;
+	overflow-y: auto;
+	background: #00B3FE;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sidebar-nav {
+    position: relative;
+    top: 0;
+    width: 230px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 10px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a.active {
+    text-decoration: none;
+    background: #FFF;
+    color: #4d4d4d;
+}
+
+#user-nav {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.user-picture {
+	margin: 0 auto;
+	display: table;
+	max-width: 150px;
+}
+
+.user-info a {
+	margin: 0 auto;
+	display: table;
+	line-height: 30pt;
+	color: #fff;
+}
+.user-info a:hover {
+    text-decoration: none;
+    color: #FFF;
+}
+.user-info a:focus {
+    text-decoration: none;
+}
+
+#page-content {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    margin-right: -230px;
+}
+
+#search-input {
+	border-radius: 15px;
+}
+
+#player-wrapper {
+	padding: 10px;
+	background: #00597E;
+	color: #FFF;
+	box-shadow: 0px 0px 8px #000;
+}
+
+#player-wrapper .podcast-logo img {
+	width: 100%;
+}
+
+#player-wrapper .info {
+	margin-top: 10px;
+}
+
+#player-wrapper .info .episode-name {
+	font-weight: bold;
+	font-size: 16pt;
+	display: block;
+}
+
+#player-wrapper .info .podcast-name {
+	font-size: 15px;
+    color: #FFF;
+}
+#player-wrapper .info .podcast-name:hover {
+    text-decoration: none;
+}
+.line {
+	height: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 0px;
+}
+#audio {
+	display: none;
+}
+
+.podcast-card {
+    background: #007DB1;
+    text-align: center;
+    margin: 10px;
+    width: 160px;
+    height: 215px;
+    float: left;
+}
+.podcast-card .title {
+    padding: 7px;
+    color: #FFF;
+}
+.podcast-card img {
+    margin: 0 auto;
+    display: block;
+    width: 160px;
+}
+
+#podcast #header {
+    display: inline;
+}
+#podcast .title{
+    font-size: 30px;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-table;
+}
+#podcast #episodes {
+    margin-top: 10px;
+}
+#podcast #episodes td, th {
+    padding: 6px;
+    padding-top: 5px;
+    padding-bottom: 7px;
+}
+#podcast #episodes .duration {
+    min-width: 100px;
+}
+
+#stack #episodes {
+    margin-top: 10px;
+}
+#stack #episodes td, th {
+    padding: 6px;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    text-decoration: none;
+}
+#stack #episodes a {
+    text-decoration: none;
+}
+#stack #episodes a:hover {
+    cursor: pointer;
+}
+
+#stack #episodes .playing {
+    color: red;
+}
+
+/*
+*START CATEGORIES PREFERENCES
+*/
+.searchable-container{margin:2px 0 0 0}
+.searchable-container label.btn-default.active{background-color:#007ba7;color:#FFF}
+.searchable-container label.btn-default{width:90%;border:1px solid #efefef;margin:5px; box-shadow:3px 3px 8px 0 #ccc;}
+.searchable-container label .bizcontent{width:100%;}
+.searchable-container .btn-group{width:100%}
+.searchable-container .btn span.glyphicon{
+    opacity: 0;
+}
+.searchable-container .btn.active span.glyphicon {
+    opacity: 1;
+}
+.searchable-container .items {
+	margin: 5px;
+	margin-right: -20px;
+}
+/*
+*END CATEGORIES PREFERENCES
+*/
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 230px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 230px;
+    }
+
+    #page-content {
+        padding: 15px;
+        padding-left: 7.5px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}

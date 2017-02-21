@@ -1,0 +1,13 @@
+User-agent: *
+
+Allow: /player
+Allow: /player/browse
+Disallow: /player/stack
+Disallow: /player/podcasts
+Allow: /download/chrome
+Disallow: /player/login
+Disallow: /player/logout
+Allow: /page/licences
+Allow: /page/terms
+
+Sitemap: http://www.atomplayer.com.br/sitemap.xml

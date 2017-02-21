@@ -1,0 +1,23 @@
+<div id="stack">
+	<div class="page-header">
+	  <h3>Fila de Reprodução</h3>
+	</div>
+	<table id="episodes" width="100%">
+		<thead>
+			<tr>
+				<th>Episódio</th>
+				<th>Podcast</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr class="episode" ng-repeat="data in playlist">
+				<td>
+					<a ng-click="jump($index)" ng-class="{playing: $index == playing}">{{data.episode.title}}</a>
+					<button style="float:right" class="btn btn-default btn-xs" ng-click="delete($index)">Delete</button>
+				</td>
+				<td><a href="podcast/{{data.podcast.id}}">{{data.podcast.title}}</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

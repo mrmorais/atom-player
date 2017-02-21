@@ -1,0 +1,63 @@
+<div id="login">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="page-header">
+			  <h3>Login <small>ou Facebook</small></h3>
+			</div>
+			<form name="loginForm" ng-submit="logIn()" novalidate>
+				<div class="form-group" ng-class="{'has-error': loginForm.email.$invalid && !loginForm.email.$pristine}">
+					<input type="email" ng-model="log.email" class="form-control" name="email" placeholder="E-mail">
+				</div>
+				<div class="form-group" ng-class="{'has-error': loginForm.pass.$invalid && !loginForm.pass.$pristine}">
+					<input type="password" ng-model="log.pass" ng-minlength="8" ng-maxlength="20" class="form-control" name="pass" placeholder="Senha">
+				</div>
+				<div class="form-group">
+					<input type="submit" class="form-control btn btn-success" value="Entrar">
+				</div>
+				<div ng-show="log_error != undefined" class="alert alert-danger" role="alert">{{log_error}}</div>
+			</form>
+			<a href="">
+				<div class="btn-group">
+					<button class="btn btn-primary"><i class="fa fa-facebook"></i></button>
+					<button ng-click="logInFb()" class="btn btn-primary"> Entrar com Facebook</button>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-6">
+			<div class="page-header">
+			  <h3>Cadastrar</h3>
+			</div>
+			<form name="signinForm" ng-submit="signIn()" novalidate>
+				<div class="form-group" ng-class="{'has-error': signinForm.first_name.$invalid && !signinForm.first_name.$pristine}">
+					<input type="text" ng-model="cad.first_name" ng-minlength="2" ng-maxlength="20" class="form-control" name="first_name" placeholder="Nome">
+					<p ng-show="signinForm.first_name.$invalid && !signinForm.first_name.$pristine">
+						Seu nome é requerido!
+					</p>
+				</div>
+				<div class="form-group" ng-class="{'has-error': signinForm.last_name.$invalid && !signinForm.last_name.$pristine}">
+					<input type="text" ng-model="cad.last_name" ng-minlength="2" ng-maxlength="20" class="form-control" name="last_name" placeholder="Sobrenome">
+					<p ng-show="signinForm.last_name.$invalid && !signinForm.last_name.$pristine">
+						Seu sobrenome é requerido!
+					</p>
+				</div>
+				<div class="form-group" ng-class="{'has-error': signinForm.email.$invalid && !signinForm.email.$pristine}">
+					<input type="email" ng-model="cad.email" class="form-control" name="email" placeholder="E-mail" autocomplete="off">
+					<p ng-show="signinForm.email.$invalid && !signinForm.email.$pristine">
+						E-mail inválido
+					</p>
+				</div>
+				<div class="form-group" ng-class="{'has-error': signinForm.pass.$invalid && !signinForm.pass.$pristine}">
+					<input type="password" ng-minlength="8" ng-maxlength="20" ng-model="cad.pass" class="form-control" name="pass" placeholder="Senha">
+					<p ng-show="signinForm.pass.$invalid && !signinForm.pass.$pristine">
+						A sua senha deve conter entre 8 e 20 caracteres
+					</p>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="form-control btn btn-warning" value="Cadastrar">
+				</div>
+				<div ng-show="cad_success" class="alert alert-success" role="alert">{{cad_success}}</div>
+				<div ng-show="cad_error != undefined" class="alert alert-danger" role="alert">{{cad_error}}</div>
+			</form>
+		</div>
+	</div>
+</div>

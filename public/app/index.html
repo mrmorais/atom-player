@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="player">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Maradona Morais">
+        <link rel="shortcut icon" href="/assets/ico/favicon.ico">
+        <base href="/player/">
+
+        <title>Atom Player para Podcast</title>
+
+        <link href="/assets/css/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/assets/css/player.css" rel="stylesheet">
+        <link href="/assets/css/player-style.css" rel="stylesheet">
+
+        <script src="/assets/js/modernizr.js"></script>
+        <script src="http://connect.facebook.net/en_US/all.js"></script>
+
+        <script type="text/javascript">
+            FB.init({
+                appId: '653393811477462',
+                status: true,
+                cookie: true,
+                xfbml: true,
+                version: 'v2.6'
+            });
+        </script>
+        <!-- start Mixpanel -->
+        <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+    mixpanel.init("878a0412acf91d7050ba0018a7fd81e3");
+        mixpanel.track("page view");</script>
+        <!-- end Mixpanel -->
+    </head>
+    <body>
+        <div ng-controller="NotificationCtrl"></div>
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <div id="user-nav">
+                    <a href="/" target="_blank"><img src="/assets/img/prof.png" class="user-picture"></a>
+                    <span class="user-info" ng-hide="logged=='true'"><a href="login">entrar/cadastrar</a></span>
+                    <span class="user-info" ng-show="logged=='true'">
+                        <div class="dropdown">
+                          <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown"  >
+                            {{user_infos.first_name}} {{user_infos.last_name}}
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                            <li><a href="settings"><i class="fa fa-cog"></i> Configurações</a></li>
+                            <li><a href="preferences"><i class="fa fa-heart"></i> Preferências</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="logout"><i class="fa fa-sign-out"></i> Sair</a></li>
+                          </ul>
+                        </div>
+                    </span>
+                </div>
+                <ul class="sidebar-nav">
+                    <li>
+                        <a ng-class="{active: activetab=='/browse'}" href="browse"><i class="fa fa-globe"></i> Navegar</a>
+                    </li>
+                    <li>
+                        <a ng-class="{active: activetab=='/stack'}" href="stack"><i class="fa fa-tasks"></i> Fila de Reprodução</a>
+                    </li>
+                    <li ng-show="logged=='true'">
+                        <a ng-class="{active: activetab=='/podcasts'}" href="podcasts"><i class="fa fa-folder-open"></i> Meus Podcasts</a>
+                    </li>
+                    <li ng-hide="logged=='true'">
+                        <a href="#" data-toggle="modal" data-target="#doLoginModal"><i class="fa fa-folder-open"></i> Meus Podcasts</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="page-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8" ng-view>
+
+                        </div>
+
+                        <div class="col-md-4" id="player-wrapper" ng-controller="PlayerCtrl">
+                            <div class="podcast-logo">
+                                <img src="{{podcast.image}}">
+                            </div>
+                            <div class="info">
+                                <span class="episode-name">{{episode.title}}</span>
+                                <a class="podcast-name" href="podcast/{{podcast.id}}">{{podcast.title}}</a>
+                            </div><hr class="line">
+                            <div id="player">
+                                <input id="progress" class="slider" type="range" ng-click="changeTime()" ng-model="progress" min="0" max="100" step="1" value="0">
+                                <div id="control">
+                                    <span ng-show="muted">MUTED</span>
+                                    <span id="time">{{diff}}</span>
+                                    <div id="panel">
+                                        <a ng-click="previous()"><i class="fa fa-step-backward pl-btn"></i></a>
+                                        <a ng-click="playPause()"><i class="fa {{button}} pl-btn"></i></a>
+                                        <a ng-click="next()"><i class="fa fa-step-forward pl-btn"></i></a><br>
+                                        <span id="volume-box">
+                                            <input id="volume" ng-change="changeVolume()" ng-model="volume" class="slider" type="range">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <audio id="audio" ng-model="audio" controls="none" autoplay="none">
+                                <source id="audio-src" src="" type="audio/mpeg">
+                            </audio>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="modal fade" id="doLoginModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Faça login!</h4>
+              </div>
+              <div class="modal-body">
+                <p>Esta opção é disponível apenas para usuários logados</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+
+        <script src="/app/app.min.js"></script>
+        <script src="/app/controller.js"></script>
+
+
+        <script src="/assets/js/bootstrap.min.js"></script>
+    </body>
+</html>

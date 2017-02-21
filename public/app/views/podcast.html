@@ -1,0 +1,42 @@
+<div id="loading" ng-hide="loaded">
+	<center><img src="/assets/img/loading.gif"></center>
+</div>
+<div id="podcast" ng-show="loaded">
+	<img width="100" src="{{podcast.image}}">
+	<div id="header">
+		<span class="title">{{podcast.title}}</span>
+		<a ng-click="assinar()" ng-show="logged=='true' && !signed" class="btn btn-success">Assinar</a>
+		<a ng-click="desassinar()" ng-show="logged=='true' && signed" class="btn btn-default">Assinado</a>
+		<a data-toggle="modal" data-target="#doLoginModal" ng-hide="logged=='true'" class="btn btn-success">Assinar</a>
+		<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.atomplayer.com.br/share/{{podcast.srcId}}" class="btn btn-info" target="_blank"><i class="fa fa-facebook"></i></a>
+	</div>
+	<hr>
+	<h4>Episódios de {{podcast.title}}</h4>
+	<table id="episodes" width="100%">
+		<thead>
+			<tr>
+				<th>Título</th>
+				<th>Duração</th>
+				<th>Data</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="episode in podcast.episodes">
+				<td>
+					<div class="btn-group" style="float:right;">
+						<button type="button" class="btn btn-default btn-xs" ng-click="exec(episode.guid, 'execute')">Executar</button>
+						<button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a ng-click="exec(episode.guid, 'add')" href="#">Adicionar à lista</a></li>
+							<li><a href="{{episode.enclosure.url}}" target="_blank">Baixar</a></li>
+						</ul>
+					</div>
+					{{episode.title}}
+				</td>
+				<td class="duration">{{episode.duration}} min</td>
+				<td>{{episode.srtDate}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
