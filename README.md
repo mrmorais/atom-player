@@ -41,7 +41,7 @@ node index.js
 Se tudo ocorreu bem, a página inicial do Atom Player deve estar rodando no endereço: `http://localhost:8080`.
 
 ### Contribuindo
-Este repositório está vinculado à um canal do Gitter.im para discussão. Antes de contribuir relate o problema/solução no canal: (https://gitter.im/Atom-Player)[https://gitter.im/Atom-Player].
+Este repositório está vinculado à um canal do Gitter.im para discussão. Antes de contribuir relate o problema/solução no canal: [https://gitter.im/Atom-Player](https://gitter.im/Atom-Player).
 
 Para submeter uma contribuição, você deve:
  - Abrir um issue no projeto. Se necessário, discutir no Gitter.im ou no próprio issue.
