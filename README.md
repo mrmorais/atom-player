@@ -68,7 +68,7 @@ git push origin new-issue-88888
 ```
 - Envie um pull request no GitHub
 
-Seu código será revisado e mesclado no branch principal e por fim será enviado para produção em (Atom Player)[atom_lnk]
+Seu código será revisado e mesclado no branch principal e por fim será enviado para produção em [Atom Player](atom_lnk)
 
 [podcast_wiki]: <https://en.wikipedia.org/wiki/Podcast>
 [atom_lnk]: <http://atomplayer.com.br>
