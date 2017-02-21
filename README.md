@@ -3,9 +3,9 @@
 [![Gitter](https://badges.gitter.im/Atom-Player/Lobby.svg)](https://gitter.im/Atom-Player/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
 ### Descrição
-Atom podcast player é um player de (podcast)[podcast_wiki] desenvolvido em 2016, que utiliza uma stack Node.js + Mongo DB no back-end e AngularJS (1) no front-end. Além de player, o Atom também agrega podcasts para usuários cadastrados gerando uma base de dados acessível via web.
+Atom podcast player é um player de [podcast][podcast_wiki] desenvolvido em 2016, que utiliza uma stack Node.js + Mongo DB no back-end e AngularJS (1) no front-end. Além de player, o Atom também agrega podcasts para usuários cadastrados gerando uma base de dados acessível via web.
 
-Esta aplicação está rodando no endereço: (http://atomplayer.com.br)[atom_lnk] e a intenção é que o código neste repositório esteja em produção no servidor.
+Esta aplicação está rodando no endereço: [http://atomplayer.com.br][atom_lnk] e a intenção é que o código neste repositório esteja em produção no servidor.
 
 Existem algumas funcionalidades que ainda não foram implementadas que posteriormente irei relatar como issue do projeto para que possam ser feitas contribuições. Além disso, é um projeto carente de documentação que será brevemente escrita.
 
@@ -31,7 +31,7 @@ module.exports = {
 	pass_algorithm: "aes-256-ctr"
 };
 ```
-Nas áreas `random_key` você deve colocar (entre as aspas) duas senhas secretas diferentes. Estas senhas são importantes para criptografar as informações de sessões dos usuários, por isso é fundamental que só você tenha acesso à elas. Recomenda-se que você crie senhas aleatórias utilizando geradores de senhas como o SPG ((clique aqui)[http://passwordsgenerator.net/]).
+Nas áreas `random_key` você deve colocar (entre as aspas) duas senhas secretas diferentes. Estas senhas são importantes para criptografar as informações de sessões dos usuários, por isso é fundamental que só você tenha acesso à elas. Recomenda-se que você crie senhas aleatórias utilizando geradores de senhas como o SPG ([clique aqui](http://passwordsgenerator.net/)).
 
 #### Iniciando a aplicação
 O passo final é dar o start na aplicação. Para isso, execute:
@@ -70,5 +70,5 @@ git push origin new-issue-88888
 
 Seu código será revisado e mesclado no branch principal e por fim será enviado para produção em (Atom Player)[atom_lnk]
 
-[podcast_wiki]: https://en.wikipedia.org/wiki/Podcast
-[atom_lnk]: http://atomplayer.com.br
+[podcast_wiki]: <https://en.wikipedia.org/wiki/Podcast>
+[atom_lnk]: <http://atomplayer.com.br>
