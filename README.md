@@ -1,4 +1,4 @@
-![Atom Player](http://atomplayer.com.br/assets/img/logo_br.png)
+![Atom Player](http://atomplayer.com.br/assets/img/logo_br.png =250px)
 
 # Atom podcast Player
 [![Gitter](https://badges.gitter.im/Atom-Player/Lobby.svg)](https://gitter.im/Atom-Player/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
